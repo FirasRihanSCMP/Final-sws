@@ -25,6 +25,7 @@ export default function AllDepartments() {
       <Col xs={12} sm={6} lg={4}>
         <DepartmentCard title={"Venture Capital"}  src={"Venture"} text={"Expanding small businesses into bigger ones."} text2={"Expanding small businesses into bigger ones."}   className={stylesDepPage.Col} img={"venture (2).jpg"} />
       </Col>
+      
       {/* <Col xs={12} sm={6} lg={4}>
         <DepartmentCard title={""} text={""} text2={""}   className={stylesDepPage.Col} img={"img3.jpg"} />
       </Col> */}

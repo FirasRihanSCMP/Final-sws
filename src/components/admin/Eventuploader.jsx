@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify"
 import DatePicker from 'sassy-datepicker'
 import { Row,Button, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 export default function Uploader() {
   const [files, setFiles] = useState([]);
   const [file, setFile] = useState([]);
@@ -13,6 +14,7 @@ export default function Uploader() {
 const [brief, setBrief] = useState('');
 const [title, setTitle] = useState('')
 const [paragraph, setParagraph] = useState('')
+let navigate=useNavigate()
 var FinalDate=""
   const dateHandler = async(date) => {
    FinalDate=getFullDate(date.toString());
@@ -29,7 +31,7 @@ var FinalDate=""
     await setFile(e.target.files) 
   }
 
-  const onSubmitFile = (e) => {
+  const onSubmitFile =async (e) => {
     e.preventDefault();
     const data = new FormData(); 
     console.log(files)
@@ -51,14 +53,18 @@ data.append('brief',brief)
 data.append('paragraph',paragraph)
 data.append('date',date)
 
-if (window.confirm("Press a button!")) { axios.post("//localhost:3001/api/EventUpload", data)
+if (window.confirm("Press a button!")) {await axios.post("//localhost:3001/api/EventUpload", data)
       .then((e) => {
      
-        console.log("I reached here")
-        toast.success("Upload success");
+         toast.success("Upload success");
+    setTimeout(() => {
+      navigate("/Events")
+    }, 3000);
+        
+       
       })
       .catch((e) => {
-        console.log(e)
+      console.log(e)
         toast.error("Upload error");
       });  
     }

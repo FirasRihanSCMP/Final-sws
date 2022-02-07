@@ -8,6 +8,21 @@ export default function DepartmentCard(props) {
 
   return (
     <div>
+<Card className={stylesDepCard.cardsbody}>
+<Link className="cardLinks" to={"/Departments/"+props.src}> 
+  <Card.Img className={stylesDepCard.cardImage} variant="top" src={"./imgs/" + props.img} />
+  </Link>
+  <Card.Body>
+  <Card.Title>{props.title}</Card.Title>
+  <Card.Text className={stylesDepCard.cardstexts}>
+        {props.text2}
+          </Card.Text>
+    
+  </Card.Body>
+</Card>
+
+
+{/* 
       <Card className={stylesDepCard.cardsbody}>
        <Link className="cardLinks" to={"/Departments/"+props.src}>  <Card.Img
           className={stylesDepCard.cardImage}
@@ -41,7 +56,7 @@ export default function DepartmentCard(props) {
         {props.text2}
           </Card.Text>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
   );
 }

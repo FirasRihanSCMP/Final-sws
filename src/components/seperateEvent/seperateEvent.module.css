@@ -9,6 +9,18 @@
  /*    text-align: justify; */
 }
 
+.spinnerdiv{
+
+ position: relative;
+ height: 50vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.spinner{
+
+ 
+    }
 @media(max-width:1100px){
     .title{
         font-size: 20px;

@@ -1,9 +1,8 @@
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import "./Navbar.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default function Navigation() {
   return (
@@ -28,12 +27,7 @@ export default function Navigation() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              {/*    <Nav.Link
-             className= {currenturl=="/Services"?"isSelected":""} href="/Services"
-            >
-              SERVICES
-            </Nav.Link> */}
-              {/* <Nav.Link href="/Work">WORK</Nav.Link> */}
+            
               <Nav.Link className={"navlink"} eventKey="1" as={Link} to="/">
                 Home
               </Nav.Link>
@@ -54,11 +48,18 @@ export default function Navigation() {
               >
                 Events
               </Nav.Link>
+              <Nav.Link
+                className={"navlink"}
+                eventKey="3"
+                as={Link}
+                to="/SWS"
+              >
+                Startup-Weekend
+              </Nav.Link>
               <Nav.Link className={"navlink"} eventKey="4" as={Link} to="/auth">
                 LogIn
               </Nav.Link>
-              {/*  <Nav.Link className={'navlink'}  to={{ pathname:"scmp-lb.com/webmail"}}>Staff Mail</Nav.Link> */}
-              {/*  <Nav.Link href="/Resources">RESOURCES</Nav.Link> */}
+
             </Nav>
           </Navbar.Collapse>
         </Container>

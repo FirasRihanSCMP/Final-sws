@@ -6,7 +6,7 @@ export default function EventsCard(props) {
     return (
         <div key={props.key}>
             
-           <Link className={stylesEventCard.cardLinks} to={`/${props.src}`} >
+           <Link className={stylesEventCard.cardLinks} to={`/Events/${props.src}`} >
                  <Card className={stylesEventCard.cardsbody }>
          <Card.Img
           className={stylesEventCard.cardImage}

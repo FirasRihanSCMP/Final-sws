@@ -22,10 +22,11 @@ const [loggedIn, setloggedIn] = useState(false);
  }
  const setResult=(e)=>{
   console.log(e) 
-  if(e===false||e==="Network Error"){
+  if(e===false||e==="Network Error"||typeof e==="undefined"){
     setloggedIn(false)
   }
-else{setloggedIn(true)}
+else{console.log(e) 
+  setloggedIn(true)}
  } 
 /* console.log(fileSelected.target) */
 /*  const [file, setFile] = useState(null);

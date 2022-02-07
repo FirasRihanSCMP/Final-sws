@@ -1,0 +1,26 @@
+.root{
+    width: 80vw;
+    margin: auto;
+}
+.firstParagraph{
+    font-size: 20px;
+    margin-top: 32px;
+    line-height: 30px;
+}
+.title{
+    font-size: 72px;
+    font-family: "Suisse Intl", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 82.8px;
+}
+@media(max-width:960px){
+    .title{
+        font-size: 36px;
+        line-height: 39.6px;
+    }
+    .firstParagraph{
+        font-size: 16px;
+        margin-top: 16px;
+        line-height: 24px;
+    }
+}
