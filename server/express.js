@@ -51,41 +51,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-/* app.get("/api", (req, res)=>{
-    res.send('hello')
-})
- */
 
 
-/* app.get("/hi",(req,res,next)=>{
-const returning=ReactDOMServer.renderToString(App);
-res.send(`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="roots">${returning} </div>
-</body>
-</html>`)
 
-}) */
 
-/* app.use('^$',(req,res,next)=>{
-  fs.readFile(path.resolve('../client/build/index.html'),'utf-8',(err,data)=>{
-  const returnedData=data.replace('<div id="root"></div>',`<div id="root">${renderToString(<App/>)}</div>`)
-    if(err){
-      console.log(err)
-      return res.status(500).send("some error happened")
-    }
-    return res.send(returnedData)
-  })
-}) */
-
-app.use(express.static(path.resolve(__dirname, '../client', 'build')))
+app.use(express.static(path.resolve(__dirname, '../', 'build')))
 
 app.get("/api/Events", async (req, res) => {
   try {
