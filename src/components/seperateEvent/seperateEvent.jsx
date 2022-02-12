@@ -7,7 +7,8 @@ import EventsComp from "../EventsComp";
 import NotFound from "../NotFound";
 import Topstyles from "./seperateEvent.module.css";
 import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
+
+import Spinner from "../ClipLoader/Spinner";
 export default function SeperateEvent(props) {
   const [Event, setEvent] = useState([]);
   const [Loaded,setLoaded]=useState(false)
@@ -17,7 +18,7 @@ export default function SeperateEvent(props) {
    useEffect(() => {
     async function fetchData(){
     await axios
-      .post("http://localhost:3001/api/SeperateEvent", { EID: id })
+      .post("http://test.scmp-lb.com:3002/api/SeperateEvent", { EID: id })
       .then((response) => {
   
     if(response.data==="not found"){
@@ -43,13 +44,14 @@ export default function SeperateEvent(props) {
 } }, [errorFetchedChecker]); 
   return (
     <div>
+
    {Loaded? (Event.length>0 ? <div> <div className={Topstyles.titleEng}>
         {" "}
         <p className={Topstyles.date}>Date: {props.date||Event[0].EDate}</p>
         <h1 className={Topstyles.title}>{props.title||Event[0].ETitle}</h1>
         <p>{props.text2||Event[0].EBrief}</p>
       </div>
-      <EventsComp img={props.img||Event[0].EPhotos} /></div>:  <NotFound/>) :<div className={Topstyles.spinnerdiv}><ClipLoader color={"#ffc41d"} size={150} css={ " "}/></div> }
+      <EventsComp img={props.img||Event[0].EPhotos} /></div>:  <NotFound/>) :<Spinner/> }
     
      
     </div>
