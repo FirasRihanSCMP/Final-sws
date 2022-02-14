@@ -16,12 +16,12 @@ export default function Events(props) {
   Axios.get("http://test.scmp-lb.com:3002/api/Events").then((response)=>{
     setLoaded(true)
     setEventsList(response.data);
-    console.log(response.data)
+  
   
   }
   
   ).catch(err=>{
-    console.log("Network Error")
+   
   })
       
   }, [])

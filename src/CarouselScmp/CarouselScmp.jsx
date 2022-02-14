@@ -8,7 +8,7 @@ export default function CarouselScmp(props) {
     return (
         <div className={stylesCarousel.bodyWidth}>
             <Carousel fade={true} >
-               {props.img ? props.img.map(img => { console.log(img.img);
+               {props.img ? props.img.map(img => { 
                   return  <Carousel.Item interval={3000} className={stylesCarousel.carouselmain}>
                     <img
                           style={{height: `${props.style}vh` }}
